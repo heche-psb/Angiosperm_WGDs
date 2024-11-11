@@ -1,0 +1,8 @@
+### command for substitution rate correction and phylogenetic placement of WGDs, exemplified by Aquilegia coerulea, s### imliar for other species
+### The cds file and gff3 file involved in the analysis can be found in the Data and code availability section of our### manuscript. Exact species composition for each WGD event is documented in Supplementary Note 4
+wgd dmd Aquilegia_coerulea -o wgd_dmd
+wgd ksd wgd_dmd/Aquilegia_coerulea.tsv Aquilegia_coerulea -o wgd_ksd
+wgd syn -f mRNA -a Name wgd_dmd/Aquilegia_coerulea.tsv Aquilegia_coerulea.gff3 -ks wgd_ksd/Aquilegia_coerulea.tsv.ks.tsv -o wgd_syn
+wgd dmd --globalmrbh Aquilegia_coerulea Protea_cynaroides Acorus_americanus Vitis_vinifera -o wgd_globalmrbh
+wgd ksd wgd_globalmrbh/global_MRBH.tsv Aquilegia_coerulea Protea_cynaroides Acorus_americanus Vitis_vinifera -o wgd_globalmrbh_ks
+wgd viz -d wgd_globalmrbh_ks/global_MRBH.tsv.ks.tsv -fa Aquilegia_coerulea -epk wgd_ksd/Aquilegia_coerulea.tsv.ks.tsv -ap wgd_syn/iadhore-out/anchorpoints.txt -sp speciestree.nw -o wgd_viz_mixed_Ks --plotelmm --plotapgmm --reweight

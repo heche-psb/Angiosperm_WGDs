@@ -1,0 +1,3 @@
+### command for mcmctree
+### 466sp.Concat is the concatenated cds file of those 12 SOGs mentioned in the manuscript, detailed information in S### upplementary Note 3
+mcmctree mcmctree.ctrl

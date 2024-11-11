@@ -1,0 +1,10 @@
+### MAFFT and IQTREE analysis
+### cds.list file documents the absolute paths to the cds files of 1614 SOGs (Single-Copy Orthogroup) as produced by BUSCO
+SEEDFILE=cds.list
+j=$(awk "NR==$SGE_TASK_ID" $SEEDFILE)
+mafft --auto $j > $j.mafft
+iqtree -s $j.mafft -bb 1000 -bnni -alrt 1000 -abayes
+
+### ASTRAL-pro analysis
+### concatenating the 1614 treefiles produced by IQTREE into a file named "all_treefiles" and preparing a gene name-s### pecies name map file as ASTRAL-pro requires
+astral-pro -i all_treefiles -a Gene_Species_Map.txt -o astral.result

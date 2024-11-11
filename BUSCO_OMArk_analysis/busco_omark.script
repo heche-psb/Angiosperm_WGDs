@@ -1,0 +1,12 @@
+### command for BUSCO
+### Angio_pep folder stores all the protein files (translated coding sequences) for all genomes involved in our manus### cript
+busco -i Angio_pep -m prot -l embryophyta_odb10 -o batch_busco
+
+
+### command for OMArk
+### prot.list file documents the absolute paths to all the protein files as above
+SEEDFILE=prot.list
+j=$(awk "NR==$SGE_TASK_ID" $SEEDFILE)
+omamer search --db Viridiplantae.h5 --query $j --out $j.omamer
+omark -f $j.omamer -d Viridiplantae.h5 -o $j.output
+
