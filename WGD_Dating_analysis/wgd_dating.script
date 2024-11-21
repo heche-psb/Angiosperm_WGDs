@@ -1,5 +1,5 @@
 ### command for absolute WGD dating, exemplified by Aquilegia coerulea, simliar for other species
-### The cds file and gff3 file involved in the analysis can be found in the Data and code availability section of our### manuscript. Exact species composition of the starting tree (here as 'dating_tree.nw') for each WGD event is docum### ented in Supplementary Note 4
+### The cds file and gff3 file involved in the analysis can be found in the Data and code availability section of our manuscript. Exact species composition of the starting tree (here as 'dating_tree.nw') for each WGD event is documented in Supplementary Note 6
 wgd dmd Aquilegia_coerulea -o wgd_dmd
 wgd ksd wgd_dmd/Aquilegia_coerulea.tsv Aquilegia_coerulea -o wgd_ksd
 wgd syn -f mRNA -a Name wgd_dmd/Aquilegia_coerulea.tsv Aquilegia_coerulea.gff3 -ks wgd_ksd/Aquilegia_coerulea.tsv.ks.tsv -o wgd_syn
