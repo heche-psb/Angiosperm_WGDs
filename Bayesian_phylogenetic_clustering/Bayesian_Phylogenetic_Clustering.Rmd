@@ -1,0 +1,170 @@
+---
+title: "Clustering of WGD events"
+author: "Garben Logghe"
+date: "2023-11-24"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(fig.width = 12, fig.height = 10)
+
+library(ape)        #to do phylogenetic analyses
+library(brms)       #to run Bayesian models
+library(dplyr)      #to do data wrangling
+library(evobiR)     #to reorder data based on phylogenetic tree labels
+library(geiger)     #to check whether data matches phylogenetic tree
+library(ggdist)     #to visualise confidence intervals
+library(ggplot2)    #to do data visualisation
+library(readr)      #to read tsv files
+library(tidybayes)  #to visualise posteriors
+library(tidyr)      #to do data wrangling
+
+```
+
+### PREPARING DATA ###
+
+```{r}
+
+time_data <- read_tsv("D:/BioAdmin/Documents/Clustering of WGD events/WGD.taxon.species_1127.tsv")
+data_expanded <- time_data %>% 
+                  rename(Species = Full_Species) %>%
+                  separate_rows(Species, sep = ",")
+data_expanded$Species <- gsub("^\\s+|\\s+$", "", data_expanded$Species)
+data_expanded$Species <- gsub(" ", "_", data_expanded$Species)
+
+my_tree <- read.nexus("D:/BioAdmin/Documents/Clustering of WGD events/FigTree.tre")
+
+name_check <- data_expanded %>% distinct(Species)
+row.names(name_check) <- name_check$Species
+ReorderData(my_tree, name_check, taxa.names = "rownames")
+name.check(my_tree, name_check)
+
+keep.tip(my_tree, data_expanded$Species)
+
+write.tree(my_tree, file = "D:/BioAdmin/Documents/Clustering of WGD events/WGD phylo tree.txt")
+
+```
+
+### WITHOUT PHYLOGENETIC CONNECTIONS ###
+
+```{r}
+
+get_prior(formula = Mean~1, data = data_expanded)
+
+mix <- mixture(gaussian, gaussian, gaussian)
+prior <- c(
+            prior(normal(29.67, 16), class = Intercept, dpar=mu1),
+            prior(normal(58.18, 16), class = Intercept, dpar=mu2),
+            prior(normal(93.62, 16), class = Intercept, dpar=mu3))
+
+FM_model <- brm(brms::bf(Mean~1),
+                data = data_expanded,
+                family = mix,
+                prior = prior,
+                chains = 4,
+                cores = 16,
+                iter = 4000,
+                control = list(adapt_delta=0.95, max_treedepth = 12))
+
+summary(FM_model)
+
+saveRDS(FM_model, file = "D:/BioAdmin/Documents/Clustering of WGD events/multiple intercepts uncorrected.rds")
+
+```
+
+### PHYLOGENETIC CORRECTIONS INCLUDED ###
+
+```{r}
+
+A <- vcv.phylo(my_tree)
+
+FM_model_phylo <- brm(brms::bf(Mean~1+(1|gr(Species,cov = A))),
+                    data = data_expanded,
+                    data2 = list(A=A),
+                    family = gaussian,
+                    prior = prior,
+                    chains = 4,
+                    cores = 16,
+                    iter = 4000,
+                    control = list(adapt_delta=0.95, max_treedepth = 12))
+
+summary(FM_model_phylo)
+
+saveRDS(FM_model_phylo, file = "D:/BioAdmin/Documents/Clustering of WGD events/multiple intercepts corrected.rds")
+
+```
+
+### DATA VISUALISATION ###
+
+```{r}
+
+### NO CORRECTIONS ###
+
+FM_model <- readRDS("D:/BioAdmin/Documents/Clustering of WGD events/multiple intercepts uncorrected.rds")
+
+draws_uncorr <- FM_model %>%
+                spread_draws(b_mu1_Intercept, b_mu2_Intercept, b_mu3_Intercept) %>%
+                pivot_longer(!.iteration) %>%
+                filter(name!=".chain") %>%
+                filter(name!=".draw") %>%
+                mutate(name=ifelse(name=="b_mu1_Intercept","Peak 1",name)) %>%
+                mutate(name=ifelse(name=="b_mu2_Intercept","Peak 2",name)) %>%
+                mutate(name=ifelse(name=="b_mu3_Intercept","Peak 3",name)) %>%
+                mutate(Variable=name)
+
+ggplot(draws_uncorr, aes(y = as.factor(phylo), x = as.numeric(value), group = Variable)) +
+                    stat_halfeye(aes(fill = Variable, fill_ramp = after_stat(level)), 
+                                 .width = c(0.50, 0.80, 0.95), 
+                                 position = position_dodge(width = 0),  # Adjust the dodge width
+                                 point_interval = mode_hdci) +
+                    scale_fill_brewer(palette = "Set2") +
+                    geom_vline(xintercept = 0, lty = 2, linewidth = 0.5, col = "black") +
+                    scale_y_discrete() +
+                    xlab("Timing of WGD events") +
+                    ylab("") +
+                    theme_tidybayes() +
+                    scale_fill_ramp_discrete(na.translate = FALSE) +
+                    labs(title = "", fill_ramp = "Interval") +
+                    theme(axis.text.y = element_blank(),
+                          axis.text.x = element_text(size = 13),
+                          legend.text = element_text(size = 15), 
+                          legend.title = element_text(size = 15), 
+                          axis.title.x = element_text(size = 15, margin = margin(t = 10)))
+
+### WITH PHYLOGENETIC CORRECTIONS ###
+
+FM_model_phylo <- readRDS("D:/BioAdmin/Documents/Clustering of WGD events/multiple intercepts corrected.rds")
+summary(FM_model_phylo)
+
+draws_corr <- FM_model_phylo %>%
+                spread_draws(b_mu1_Intercept, b_mu2_Intercept, b_mu3_Intercept) %>%
+                pivot_longer(!.iteration) %>%
+                filter(name!=".chain") %>%
+                filter(name!=".draw") %>%
+                mutate(name=ifelse(name=="b_mu1_Intercept","Peak 1",name)) %>%
+                mutate(name=ifelse(name=="b_mu2_Intercept","Peak 2",name)) %>%
+                mutate(name=ifelse(name=="b_mu3_Intercept","Peak 3",name)) %>%
+                mutate(Variable=name)
+
+ggplot(draws_corr, aes(y = 1, x = as.numeric(value), group = name)) +
+                    stat_halfeye(aes(fill = Variable, fill_ramp = after_stat(level)), 
+                                 .width = c(0.50, 0.80, 0.95), 
+                                 position = position_dodge(width = 0),  # Adjust the dodge width
+                                 point_interval = mode_hdci) +
+                    scale_fill_brewer(palette = "Set2") +
+                    geom_vline(xintercept = 0, lty = 2, linewidth = 0.5, col = "black") +
+                    scale_y_discrete() +
+                    xlab("Timing of WGD events") +
+                    ylab("") +
+                    theme_tidybayes() +
+                    scale_fill_ramp_discrete(na.translate = FALSE) +
+                    labs(title = "", fill_ramp = "Interval") +
+                    theme(axis.text.y = element_blank(),
+                          axis.text.x = element_text(size = 13),
+                          legend.text = element_text(size = 15), 
+                          legend.title = element_text(size = 15), 
+                          axis.title.x = element_text(size = 15, margin = margin(t = 10)))
+
+```
+
+

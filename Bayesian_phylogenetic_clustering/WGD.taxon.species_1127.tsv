@@ -1,0 +1,127 @@
+WGD label	90% HCR	Peak	Mean	Phylogenetic position	Full_Species
+1	15.61 - 30.54	21.98	23.72	Maleae	"Eriobotrya_japonica, Malus_domestica, Crataegus_pinnatifida, Sorbus_americana, Pyrus_betulifolia, Pyrus_bretschneideri, Malus_sieversii"
+2	56.10 - 75.39	64.24	65.13	Papilionoideae	"Ammopiptanthus_nanus, Medicago_truncatula, Arachis_hypogaea, Pisum_sativm, Mucuna_pruriens, Oxytropis_aciphylla, Cicer_arietinum, Vigna_radiata, Glycine_soja, Lotus_japonicus, Trifolium_subterraneum, Spatholobus_suberectus, Cajanus_cajan, Melilotus_albus, Trifolium_pratense, Dalbergia_odorifera, Vigna_angularis, Abrus_precatorius, Vicia_sativa, Lablab_purpureus, Medicago_sativa, Lens_culinaris, Lupinus_luteus, Amphicarpaea_ferruginea, Arachis_duranensis, Glycine_max, Phaseolus_vulgaris"
+3	9.64 - 18.98	13.72	14.76	Glycine	"Glycine_max, Glycine_soja"
+4	55.15 - 71.48	63.19	61.56	Juglandaceae	"Juglans_regia, Carya_illinoinensis, Cyclocarya_paliurus, Juglans_mandshurica, Platycarya_strobilacea, Juglans_sigillata"
+5	22.15 - 43.29	31.81	33.19	Brassiceae	"Raphanus_sativus, Brassica_rapa"
+6	39.57 - 69.17	51.27	53.99	Brassicaceae	"Megadenia_pygmaea, Raphanus_sativus, Thlaspi_arvense, Megacarpaea_delavayi, Brassica_napus, Cardamine_hirsuta, Aethionema_arabicum, Boechera_stricta, Orychophragmus_violaceus, Draba_nemorosa, Camelina_sativa, Lepidium_sativum, Arabidopsis_lyrata, Isatis_indigotica, Microthlaspi_perfoliatum, Lobularia_maritima, Erysimum_wardii, Sinapis_alba, Schrenkiella_parvula, Arabidopsis_thaliana, Eutrema_salsugineum, Brassica_rapa, Arabis_alpina, Brassica_oleracea, Capsella_rubella"
+7	4.44 - 10.86	6.94	7.76	Camelina	Camelina_sativa
+8	25.95 - 51.65	36.89	38.82	Partial Cleomaceae 	"Cleome_pallida, Tarenaya_hassleriana"
+9	36.81 - 73.52	58.81	55.62	Partial Malvaceae	"Gossypium_barbadense, Hibiscus_cannabinus, Durio_zibethinus, Corchorus_capsularis, Bombax_buonopozense, Theobroma_cacao, Heritiera_littoralis, Gossypium_raimondii, Gossypium_hirsutum, Abelmoschus_esculentus, Bombax_ceiba"
+10	35.36 - 54.89	45	45.68	Partial Euphorbiaceae	"Manihot_esculenta, Hevea_brasiliensis"
+11	33.40 - 40.98	37.2	38.05	Partial Salicaceae	"Chosenia_arbutifolia, Populus_trichocarpa, Salix_chaenomeloides, Populus_wilsonii"
+12	8.35 - 17.52	12.33	13.02	Linum	Linum_usitatissimum
+13	87.49 - 111.80	101	96.34	Myrtales	"Melastoma_dodecandrum, Punica_granatum, Sonneratia_alba, Sonneratia_caseolaris, Lagerstroemia_indica, Syzygium_aromaticum, Eucalyptus_grandis, Trapa_bicornis, Melaleuca_cajuputi"
+14	39.29 - 73.16	57.8	56.88	Solanaceae	"Nicotiana_tabacum, Capsicum_chinense, Capsicum_baccatum, Petunia_exserta, Iochroma_cyaneum, Nicotiana_attenuata, Datura_stramonium, Solanum_lycopersicum, Physalis_cordata, Solanum_pennellii, Capsicum_annuum, Nicotiana_tomentosiformis, Solanum_tuberosum, Physalis_pruinosa"
+15	22.16-51.19	34.67	37.15	Olea	Olea_europaea
+16	46.88 - 74.43	58.01	59.06	Asteraceae	"Lactuca_sativa, Smallanthus_sonchifolius, Chrysanthemum_boreale, Taraxacum_kok-saghyz, Arctium_lappa, Cynara_cardunculus, Helianthus_annuus, Taraxacum_mongolicum, Cichorium_endivia, Erigeron_canadensis, Glebionis_coronaria, Mikania_micrantha, Artemisia_annua, Stevia_rebaudiana, Carthamus_tinctorius"
+17	31.23 - 63.73	46.18	48.18	Apioideae	"Angelica_sinensis, Daucus_carota, Apium_graveolens, Coriandrum_sativum"
+18	49.71 - 83.17	67.41	66.48	Partial Apiales	"Angelica_sinensis, Daucus_carota, Apium_graveolens, Coriandrum_sativum"
+19	24.46 - 62.93	40.74	43.59	Amaranthus	"Amaranthus_hybridus, Amaranthus_capensis, Amaranthus_hypochondriacus"
+20	19.99 - 49.87	31.7	35.65	Kalanchoe	Kalanchoe_fedtschenkoi
+21	105.07 - 122.32	112.54	112.92	Ranunculales	"Aquilegia_coerulea, Macleaya_microcarpa, Papaver_somniferum, Circaeaster_agrestis, Aconitum_vilmorinianum, Coptis_deltoidea, Corydalis_tomentella, Epimedium_pubescens, Akebia_trifoliata"
+22	36.07 - 59.15	47.55	47.42	Poaceae	"Leersia_perrieri, Secale_cereale, Pharus_latifolius, Oryza_glaberrima, Streptochaeta_spicata, Bonia_saxatilis, Sorghum_bicolor, Thinopyrum_intermedium, Raddia_brasiliensis, Brachypodium_distachyon, Brachypodium_hybridum, Avena_sativa, Dichanthelium_boreale, Guadua_angustifolia, Bothriochloa_decipiens, Zoysia_japonica, Miscanthus_floridulus, Oryza_punctata, Saccharum_officinarum, Setaria_viridis, Triticum_aestivum, Zizania_palustris, Oryza_rufipogon, Zizania_latifolia, Oryza_sativa, Hordeum_vulgare, Eragrostis_setifolia, Panicum_virgatum, Aegilops_tauschii, Phragmites_australis, Oropetium_thomaeum, Zea_mays, Zoysia_matrella, Pennisetum_glaucum, Eragrostis_tef, Achnatherum_splendens, Setaria_italica, Triticum_turgidum, Avena_abyssinica"
+23	10.12 - 23.33	15.63	16.93	Zea	Zea_mays
+24	60.25 - 79.67	68.36	68.54	Poales	"Leersia_perrieri, Secale_cereale, Pharus_latifolius, Oryza_glaberrima, Streptochaeta_spicata, Carex_gibba, Bonia_saxatilis, Sorghum_bicolor, Thinopyrum_intermedium, Raddia_brasiliensis, Brachypodium_distachyon, Brachypodium_hybridum, Avena_sativa, Juncus_effusus, Dichanthelium_boreale, Ananas_comosus, Guadua_angustifolia, Bothriochloa_decipiens, Zoysia_japonica, Juncus_compressus, Miscanthus_floridulus, Oryza_punctata, Saccharum_officinarum, Setaria_viridis, Triticum_aestivum, Zizania_palustris, Oryza_rufipogon, Zizania_latifolia, Carex_agglomerata, Oryza_sativa, Hordeum_vulgare, Eragrostis_setifolia, Panicum_virgatum, Aegilops_tauschii, Phragmites_australis, Oropetium_thomaeum, Zea_mays, Zoysia_matrella, Pennisetum_glaucum, Eragrostis_tef, Achnatherum_splendens, Setaria_italica, Triticum_turgidum, Avena_abyssinica"
+25	36.04 - 64.83	49.66	50.81	Musaceae	"Ensete_glaucum, Ensete_ventricosum, Musa_balbisiana, Musa_acuminata"
+26	59.06 - 82.31	70.34	69.75	Zingiberales	"Ensete_glaucum, Ensete_ventricosum, Zingiber_officinale, Musa_acuminata, Wurfbainia_villosa, Musa_balbisiana"
+27	79.72 - 98.41	89.9	89.32	Arecaceae	"Areca_catechu, Cocos_nucifera, Phoenix_dactylifera, Calamus_exilis, Elaeis_guineensis"
+28	32.45 - 70.13	51.64	51.3	Asparagaceae	"Asparagus_setaceus, Asparagus_officinalis"
+29	76.94 - 100.45	88.03	88.27	Partial Asparagales	"Asparagus_setaceus, Asparagus_officinalis"
+30	75.4 - 105.81	90.42	89.64	Araceae	"Pistia_stratiotes, Spirodela_polyrhiza, Zantedeschia_hybrid_cultivar, Wolffia_australiana, Amorphophallus_konjac, Lemna_turionifera, Lemna_minor"
+31	76.92 - 105.46	92.28	90.79	Araceae	"Pistia_stratiotes, Spirodela_polyrhiza, Zantedeschia_hybrid_cultivar, Wolffia_australiana, Amorphophallus_konjac, Lemna_turionifera, Lemna_minor"
+32	83.58 - 97.09	91.33	89.96	Partial Alismatales	"Cymodocea_rotundata, Zostera_marina, Potamogeton_perfoliatus, Zostera_muelleri"
+33	68.84 - 105.70	91.63	87.46	Lauraceae	"Persea_americana, Phoebe_bournei, Cinnamomum_bodinieri"
+34	98.56 - 124.30	111.38	111.04	Magnoliales + Laurales	"Chimonanthus_salicifolius, Liriodendron_chinense, Persea_americana, Liriodendron_tulipifera, Magnolia_biondii, Cinnamomum_bodinieri, Phoebe_bournei"
+35	70.24 - 132.13	98.65	100.82	Nymphaeales	"Nymphaea_colorata, Brasenia_schreberi, Euryale_ferox, Nymphaea_thermarum"
+36	31.00 - 74.14	50.22	53.49	Acorus	"Acorus_tatarinowii, Acorus_americanus"
+37	66.68 - 91.10	78.05	78.84	Dioscoreaceae	"Dioscorea_rotundata, Trichopus_zeylanicus, Dioscorea_alata"
+38	73.94 - 92.92	83.15	83.13	Cucurbitaceae	"Cucumis_sativus, Cucurbita_maxima, Benincasa_hispida, Siraitia_grosvenorii, Cucumis_melo, Cucurbita_argyrosperma, Citrullus_lanatus"
+39	18.39 - 34.43	25.96	26.69	Begonia	"Begonia_aconitifolia, Begonia_amoeboides"
+40	27.25 - 50.78	37.37	39.19	Genistoids	Lupinus_luteus
+41	51.86 - 89.61	72.38	70.88	Convolvulaceae	Ipomoea_nil
+42	33.53 - 70.57	48.2	52.02	Sesamum	Sesamum_indicum
+43	12.31 - 44.46	24.37	28.43	Actinidia	"Actinidia_chinensis, Actinidia_eriantha"
+44	59.97 - 86.50	75.82	72.88	Actinidiaceae + Theaceae	"Camellia_oleifera, Camellia_chekiangoleosa, Actinidia_chinensis, Actinidia_eriantha"
+45	38.61 - 98.94	68.74	69.87	Nelumbonaceae	Nelumbo_nucifera
+46	45.65 - 78.38	62.33	62.43	Orchidaceae	"Dendrobium_nobile, Cremastra_appendiculata, Apostasia_odorata"
+47	20.68 - 50.76	32.01	36.02	Zanthoxylum	"Zanthoxylum_armatum, Zanthoxylum_bungeanum"
+48	12.1 - 29.79	18.92	21.29	Euryale	Euryale_ferox
+49	13.14 - 34.73	21.61	23.99	Piper	Piper_nigrum
+50	83.82 - 114.30	97.63	98.94	Calycanthaceae	Chimonanthus_salicifolius
+51	112.96 - 135.47	126.52	124.97	Chloranthales	"Chloranthus_spicatus, Chloranthus_erectus"
+52	92.09 - 119.39	111.22	105.88	Lardizabalaceae	Akebia_trifoliata
+53	88.42 - 107.64	101.21	98.31	Buxales	Buxus_microphylla
+54	71.44 - 105.90	95.85	89.15	Trochodendrales	Trochodendron_aralioides
+55	9.92 - 23.27	15.76	16.78	Achnatherum	Achnatherum_splendens
+56	4.12 - 10.72	6.75	7.65	Partial Miscanthus 	Miscanthus_floridulus
+57	11.11 - 24.72	17.18	18.22	Bonia	Bonia_saxatilis
+58	4.24 - 10.15	6.34	7.18	Partial Eragrostis	"Eragrostis_tef, Eragrostis_setifolia"
+59	9.59 - 21.74	14.16	15.85	Zizania	"Zizania_latifolia, Zizania_palustris"
+60	18.87 - 41.91	28.78	30.57	Partial Zingiberaceae	"Wurfbainia_villosa, Zingiber_officinale"
+61	41.12 - 84.19	61.14	62.16	Polygonaceae	"Fagopyrum_tataricum, Rheum_tanguticum, Rumex_hastatulus"
+62	36.50 - 70.25	51.11	54.05	Caryophyllaceae	"Silene_latifolia, Gypsophila_vaccaria, Dianthus_caryophyllus"
+63	34.15 - 84.96	56.13	58.95	Cactaceae	Pereskia_aculeata
+64	63.99 - 96.40	81.73	78.89	Nyssaceae	"Davidia_involucrata, Nyssa_yunnanensis, Nyssa_ogeche, Camptotheca_acuminata"
+65	37.95 - 68.34	54.99	53.37	Primulaceae	"Aegiceras_corniculatum, Primula_veris"
+66	45.11 - 77.62	58.82	62.06	Partial Rubiaceae	Neolamarckia_cadamba
+67	18.23 - 46.01	29.25	32.95	Utricularia	Utricularia_gibba
+68	40.99 - 74.71	56.84	58.32	Orobanchaceae	"Lindenbergia_luchunensis, Phtheirospermum_japonicum, Euphrasia_regelii"
+69	18.99 - 46.51	31.93	33.15	Paulownia	Paulownia_fortunei
+70	25.49 - 51.61	38.55	39.96	Avicennia	Avicennia_marina
+71	18.07 - 42.59	29.2	30.67	Partial Oleaceae	"Fraxinus_pennsylvanica, Syringa_oblata"
+72	40.11 - 68.19	52.45	53.54	Oleaceae	"Fraxinus_pennsylvanica, Jasminum_sambac, Syringa_oblata, Olea_europaea"
+73	12.36 - 34.53	20.35	23.76	Streptocarpus	Streptocarpus_teitensis
+74	31.65 - 61.34	45.96	46.78	Plantaginaceae	Antirrhinum_hispanicum
+75	43.98 - 81.38	63.95	63.06	Lamiaceae	"Tectona_grandis, Salvia_splendens, Callicarpa_americana, Perilla_frutescens, Scutellaria_baicalensis, Rosmarinus_officinalis, Ocimum_basilicum, Thymus_quinquecostatus, Pogostemon_cablin"
+76	23.5 - 58.05	38.53	40.78	Boraginaceae	Lithospermum_erythrorhizon
+77	5.1 - 19.34	10.1	12.4	Smallanthus sonchifolius	Smallanthus_sonchifolius
+78	28.26 - 61.14	43.38	44.57	Heliantheae 	"Smallanthus_sonchifolius, Mikania_micrantha, Stevia_rebaudiana, Helianthus_annuus"
+79	28.39 - 66.51	47.06	47.96	Partial Araliaceae	"Panax_quinquefolius, Eleutherococcus_senticosus, Aralia_elata, Panax_japonicus, Panax_ginseng, Panax_stipuleanatus"
+80	56.84 - 89.70	75.89	73.73	Caprifoliaceae	Lonicera_japonica
+81	41.13 - 92.99	71.73	67.2	Aquifoliaceae	Ilex_paraguariensis
+82	24.02 - 43.74	31.82	33.54	Bauhinia	Bauhinia_binata
+83	35.10 - 58.79	45.58	46.8	Elaeagnaceae	"Hippophae_rhamnoides, Elaeagnus_angustifolia"
+84	18.89 - 35.44	26.39	27.39	Tripterygium	Tripterygium_wilfordii
+85	37.26 - 59.90	48.2	48.89	Rhizophoreae	"Kandelia_candel, Rhizophora_apiculata, Bruguiera_gymnorhiza"
+86	20.03 - 49.06	30.73	34.79	Partial Melastomataceae	Melastoma_dodecandrum
+87	40.73 - 80.16	64.02	60.86	Melastomataceae	Melastoma_dodecandrum
+88	31.84 - 64.34	48.41	48.61	Dipterocarpaceae	Vatica_odorata
+89	64.03 - 91.91	78.48	78.12	Thymelaeaceae	"Stellera_chamaejasme, Aquilaria_sinensis"
+90	44.66 - 88.27	65.08	66.73	Staphyleaceae	Euscaphis_japonica
+91	17.97 - 38.17	26.15	28.34	Partial Akaniaceae	Bretschneidera_sinensis
+92	25.64 - 50.00	37.26	38.28	Capparaceae	Capparis_spinosa
+93	18.48 - 39.82	27.09	29.16	Partial Brassicaceae	Megacarpaea_delavayi
+94	14.78 - 34.33	23.53	25.06	Partial Brassicaceae	Orychophragmus_violaceus
+95	14.4 - 37.53	23.99	26.73	Toona	Toona_sinensis
+96	23.73 - 55.03	37.09	40.03	Partial Anacardiaceae	Mangifera_indica
+97	39.66 - 86.55	58.41	62.34	Proteaceae	"Macadamia_ternifolia, Macadamia_integrifolia"
+98	35.27 - 70.69	52.26	53.29	Cymodocea	Cymodocea_rotundata
+99	51.76 - 85.58	68.45	68.27	Partial Alismatales	"Zostera_marina, Potamogeton_perfoliatus, Zostera_muelleri"
+100	75.72 - 113.55	100.83	94.62	Ceratophyllum demersum	Ceratophyllum_demersum
+101	8.46 - 20.81	13.45	14.72	Lepidium	Lepidium_sativum
+102	32.34 - 73.14	50.04	52.2	Tamaricaceae	Tamarix_chinensis
+103	11.93 - 39.76	21.08	26.04	Eleutherococcus	Eleutherococcus_senticosus
+104	9.58 - 26.57	15.87	17.94	Brasenia	Brasenia_schreberi
+105	74.3 - 118.09	98.39	96.68	Partial Piperales	Saururus_chinensis
+106	47.04 - 89.78	71.11	67.52	Santalaceae	Erythropalum_scandens
+107	41.93 - 67.85	49.55	53.86	Lythraceae	"Punica_granatum, Sonneratia_alba, Sonneratia_caseolaris, Lagerstroemia_indica, Trapa_bicornis"
+108	21.81 - 52.20	34.23	37.01	Durio	Durio_zibethinus
+109	20.70 - 57.26	34.4	39.97	Striga	Euphrasia_regelii
+110	40.99 - 74.71	56.84	58.32	Orobanchaceae	"Lindenbergia_luchunensis, Phtheirospermum_japonicum, Euphrasia_regelii"
+111	25.16 - 45.06	33.87	35.25	Partial Cucurbitaceae	Cucurbita_argyrosperma
+112	34.77 - 76.99	53.88	55	Aconitum	Aconitum_vilmorinianum
+113	8.52 - 33.39	17.25	20.9	Epimedium pubescens	Epimedium_pubescens
+114	12.78 - 52.63	26.5	32.79	Circaeaster agrestis	Circaeaster_agrestis
+115	54.32 - 79.67	65.58	67.19	Juncaceae	"Juncus_effusus, Juncus_compressus"
+116	60.25 - 80.00	70.88	70.07	Bromeliaceae	Ananas_comosus
+117	56.74 - 80.04	68.64	68.36	Cyperaceae	"Carex_agglomerata, Carex_gibba"
+118	25.15 - 61.56	40.31	43.43	Phoenix	Phoenix_dactylifera
+119	24.95 - 49.10	34.5	36.69	Trichopus	Trichopus_zeylanicus
+120	38.08 - 85.64	64.28	62.12	Davidia	Davidia_involucrata
+121	27.71 - 62.85	45.89	46.51	Callicarpa	Callicarpa_americana
+122	35.95 - 73.68	53.26	54.62	Tectona	Tectona_grandis
+123	17.29 - 43.13	26.88	30.17	Ochroma	"Bombax_ceiba, Bombax_buonopozense"
+124	27.20 - 46.98	35.56	37.13	Mesua	Mesua_ferrea
+125	23.71 - 47.63	33.68	36.09	Polygala	Polygala_tenuifolia
+126	47.22 - 75.79	58.86	61.8	Polygalaceae	Polygala_tenuifolia
