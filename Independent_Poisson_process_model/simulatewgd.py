@@ -428,7 +428,7 @@ def simulation_WGD(node,WGD_rate,duration_time,start_time,lognormal=False,sample
         if sigma <=0: sigma = 1e-11
         sampled_WGD_rate = lognorm.rvs(s=sigma, scale=WGD_rate, size=1)
         WGD_rate = sampled_WGD_rate[0]
-    lambda_ = WGD_rate * duration_time
+    lambda_ = WGD_rate
     current_time = start_time
     event_dates = []
     while current_time >= (start_time - duration_time):

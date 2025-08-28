@@ -1,0 +1,100 @@
+library(divDyn)
+library(ggplot2)
+library(dplyr)
+load(url("https://github.com/heche-psb/Angiosperm_WGDs/divDyn/pbdb_data_Triassic_2025-07-10.RData"))
+dat <- dat[dat$accepted_rank %in% c("genus","species"),]
+dat <- dat[dat$genus!="", ]
+AngioPlant <-c("Angiospermae")
+dAngioPlant <- dat$phylum %in% AngioPlant
+dat <- dat[dAngioPlant,]
+dat$clgen <- paste(dat$class, dat$genus)
+data(keys)
+data(stages)
+colnames(stages)[colnames(stages)=="stage"] <- "name"
+stgMin <- categorize(dat[ ,"early_interval"], keys$stgInt)
+stgMax <- categorize(dat[ ,"late_interval"], keys$stgInt)
+stgMin <- as.numeric(stgMin)
+stgMax <- as.numeric(stgMax)
+dat$stg <- rep(NA, nrow(dat))
+stgCondition <- c(which(stgMax==stgMin),which(stgMax==-1))
+dat$stg[stgCondition] <- stgMin[stgCondition]
+sampStg <- binstat(dat, tax="clgen", bin="stg", coll="collection_no", duplicates=FALSE)
+ddStages <- divDyn(dat, bin="stg", tax="clgen")
+sqsStagesPlot <- subsample(dat, bin="stg", tax="clgen", coll="collection_no", q=0.5, iter=1000, ref="reference_no", singleton="ref", type="sqs", duplicates=FALSE, excludeDominant=FALSE, largestColl=TRUE, output="dist", na.rm=TRUE)
+source("https://github.com/divDyn/ddPhanero/raw/master/scripts/1.0.1/phanDyn.R")
+ext <- ddStages[ , "extPC"]
+ori <- ddStages[ , "oriPC"]
+div <- ddStages[ , "divCSIB"]
+dur <- stages[ , "dur"]
+age <- stages[ , "mid"]
+name <- stages[ , "name"]
+pulseCont(ext, dur, alpha=0.01)
+maxAgeDecline <- 251.902
+minAgeDecline <- 0
+postDate <- 145
+indNAlong <- !(age<=maxAgeDecline & age>=minAgeDecline)
+indNApostord <- !(age<=postDate & age>= minAgeDecline)
+extVarLong <- ext
+oriVarLong <- ori
+extVarLong[indNAlong] <- NA
+oriVarLong[indNAlong] <- NA
+
+
+stgOccs <- sampStg$occs
+names(stgOccs) <- paste("stg", rownames(sampStg), sep="")
+sort(stgOccs)
+ddStg <- divDyn(dat, bin="stg", tax="clgen")
+crStg <- subsample(dat, bin="stg", tax="clgen", coll="collection_no", q=100, iter=1000, duplicates=FALSE, na.rm=TRUE)
+sqsStg <- subsample(dat, bin="stg", tax="clgen", coll="collection_no", q=0.5, iter=1000, ref="reference_no", singleton="ref", type="sqs", duplicates=FALSE, excludeDominant=FALSE, largestColl=TRUE, na.rm=TRUE)
+comb <- matrix(c("extPC", "oriPC", "divCSIB", "extC3t", "oriC3t", "divCSIB", "extGF", "oriGF", "divCSIB", "ext2f3", "ori2f3", "divCSIB"), ncol=3, nrow=4, byrow=T)
+rownames(comb) <- c("PC", "C3t", "GF", "2f3")
+comb <- comb[rep(1:4, 6), ]
+sourceVar<-rep(c("ddStg", "crStg", "sqsStg"),each=4)
+scale <- rep(c("stages"), each=12)
+comb <- cbind(sourceVar, scale, comb)
+colnames(comb) <- c("source", "timescale", "ext", "ori", "div")
+subtype <- rep(rep(c("raw", "cr", "sqs"), each=4),2)
+rownames(comb) <- paste(subtype, rownames(comb), sep="")
+rownames(comb) <- paste(rownames(comb), rep(c("stages"), each=12), sep="_")
+extDatStg <- data.frame(stg=1:95)
+oriDatStg <- data.frame(stg=1:95)
+for(i in 1:nrow(comb)){
+  case <- rownames(comb)[i]
+  metrics <- cbind(get(comb[i, "timescale"]), get(comb[i, "source"]))
+  if(comb[i, "timescale"] == "stages"){
+    oriDatStg[[case]] <- metrics[, comb[i, "ori"]]
+    extDatStg[[case]] <- metrics[, comb[i, "ext"]]
+  }
+  valid_rows <- !is.na(metrics[, comb[i, "ext"]]) & !is.na(metrics[, "mid"])
+  n_valid <- sum(valid_rows)
+  if(n_valid < 7){
+    warning("Skipping ", case, ": too few points (", n_valid, ").")
+    next
+  }
+  metrics_valid <- metrics[valid_rows, ]
+  transPredict <- metrics_valid[, comb[i, "ext"]]
+  res <- analyzeMetrics(metrics_valid, 
+                        ext=comb[i, "ext"], 
+                        ori=comb[i, "ori"],
+                        div=comb[i, "div"], 
+                        age="mid", dur="dur", name="name", 
+                        normalize=TRUE, 
+                        plot=FALSE, 
+                        feedback=FALSE, 
+                        detrend="loess", 
+                        transform=FALSE, 
+                        additive=FALSE)
+  assign(case, res)
+}
+
+pdf("Extinction_Rate.pdf", width=8, height=6)
+Berriasian_bin= which(stages$name == "Berriasian")
+Holocene_bin= which(stages$name == "Holocene")
+max_y <- max(extDatStg[,-1], na.rm=TRUE)
+buffer <- 0.1 * max_y
+tsplot(stages, boxes="sys", ylim=c(0, max_y+buffer), ylab="Extinction rate", xlim=Berriasian_bin:Holocene_bin, xlab="Age (mya)")
+shades(stages$mid, as.matrix(extDatStg[,-1]), col="red",res=4) # background
+for(i in 2:ncol(extDatStg))
+lines(stages$mid, extDatStg[ ,i] , lwd=0.5) # extinction - stages
+mtext(line=1, text="Genus-level extinction", side=3, cex=1)
+dev.off()
